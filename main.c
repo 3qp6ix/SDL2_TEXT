@@ -22,14 +22,14 @@ int main(int argc,char** argv){
     SDL_Surface* surface = SDL_GetWindowSurface(window);
     if(!surface) goto quit;
 
-    FONT_DATA* font = GET_FONT_DATA("./assets/font.txt");
-
     bool running = true;
     SDL_Event e;
 
     SDL_Rect label = {300,150,300,300};
     clear_screen(surface,0xFFFFFFFF);
     fill_rect(surface,label.x,label.y,label.w,label.h,0xff191307);
+
+    FONT_DATA* font = GET_FONT_DATA("./assets/default_font.txt");
 
     TEXT text = (TEXT){
         .buffer = "HELLO WORLD!\n"
