@@ -163,7 +163,7 @@ void DRAW_TEXT(TEXT* text,SDL_Surface* surface){
     }
 
     int cursor_x = x0;
-    int cursor_y = y0;
+    int cursor_y = y0 - text->scroll_y;
 
     while(*buffer){
         char character = (char)toupper(*buffer);
@@ -209,3 +209,5 @@ void DRAW_TEXT(TEXT* text,SDL_Surface* surface){
         buffer++;
     }
 }
+
+FONT_DATA* DEFAULT_FONT = NULL;
